@@ -1,4 +1,0 @@
-sentence, squeeb swe swe, contained, swe, count, 2
-sentence, i i i , contained, i, count, 3
-sentence, heyhey hey hey, contained, hey, count, 2
-sentence, yeet yeet, contained, this, count, 0,
