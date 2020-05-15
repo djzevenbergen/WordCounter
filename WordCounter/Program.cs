@@ -25,13 +25,39 @@ namespace WordCounter
 
     public static void EndProgram()
     {
+
       foreach (RepeatCounter i in RepeatCounter.GetInstances())
       {
         Console.WriteLine($"sentence, {i.Sentence}, contained, {i.Word}, count, {i.GetCount()}");
       }
+      Console.WriteLine("Print Summary to .txt file? [Y]/[N]");
+      string resp = Console.ReadLine().ToLower();
+
+      if (resp.Contains("y"))
+      {
+        List<string> summ = new List<string> { };
+        foreach (RepeatCounter i in RepeatCounter.GetInstances())
+        {
+          summ.Add($"sentence, {i.Sentence}, contained, {i.Word}, count, {i.GetCount()}");
+        }
+        PrintSummary(summ);
+      }
+      else
+      {
+        Console.ReadLine();
+        Environment.Exit(0);
+      }
+
+    }
+
+    public static void PrintSummary(List<string> summary)
+    {
+      string startupPath = Environment.CurrentDirectory;
+      System.IO.File.WriteAllLines(startupPath + "/WordCountSummary.txt", summary);
       Console.ReadLine();
       Environment.Exit(0);
     }
+
     public static bool RunProgramLoop()
     {
       bool view = false;
