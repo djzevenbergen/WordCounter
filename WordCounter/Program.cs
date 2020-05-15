@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Collections.Generic;
 using WordCounter.Models;
 
@@ -38,7 +39,7 @@ namespace WordCounter
         List<string> summ = new List<string> { };
         foreach (RepeatCounter i in RepeatCounter.GetInstances())
         {
-          summ.Add($"sentence, {i.Sentence}, contained, {i.Word}, count, {i.GetCount()}");
+          summ.Add($"sentence, {i.Sentence}, contained, {i.Word}, count, {i.GetCount()},");
         }
         PrintSummary(summ);
       }
@@ -52,8 +53,26 @@ namespace WordCounter
 
     public static void PrintSummary(List<string> summary)
     {
+      string path = "/WordCountSummary.txt";
       string startupPath = Environment.CurrentDirectory;
-      System.IO.File.WriteAllLines(startupPath + "/WordCountSummary.txt", summary);
+      if (!File.Exists(startupPath + path))
+      {
+        using (StreamWriter sw = File.CreateText(startupPath + path))
+        {
+          foreach (string i in summary)
+          {
+            sw.WriteLine(i);
+          }
+        }
+      }
+      using (StreamWriter sw = File.AppendText(startupPath + path))
+      {
+        foreach (string i in summary)
+        {
+          sw.WriteLine(i);
+        }
+      }
+
       Console.ReadLine();
       Environment.Exit(0);
     }
