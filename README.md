@@ -18,23 +18,18 @@ _This C# console application allows a user enters a sentence and a word, and cou
 
 ## Specs
 
-1. User enters a sentence
-  * Input: "There is a rat over there"
-  * Output: "Input recieved. Please enter a word that you want to count the instances of: "
-2. User enters a word
-  * Input: "There"
+1. User enters a sentence and a word, and the program returns how many times that word occurs in the sentence
+  * Input: "There is a rat over there", "there"
   * Output: "The word 'there' occurs 2 times in 'There is a rat over there'"
-3. User enters an word that is not in the sentence
+2. User enters an word that is not in the sentence, and the program returns 0
   * Input: "than"
   * Output: "The word 'than' occurs 0 times in 'There is a rat over there'"
-4. User enters an empty sentence
+3. User enters an empty sentence, and the program responds with a prompt
   * Input: "" or "         "
   * Output: "Please enter sentence to be searched"
-5. User enters an empty word
+4. User enters an empty word, and the program responds with a prompt
   * Input: "" or "          "
   * Output: "Please enter a word!"
-
-
 
 
 ## Support
