@@ -35,8 +35,19 @@ namespace WordCounter
       }
 
       RepeatCounter newCounter = new RepeatCounter(sentResp, wordResp);
+      string t = "";
 
-      Console.WriteLine($"The word '{newCounter.Word}' appears {newCounter.GetCount()} times in the sentence '{newCounter.Sentence}' ");
+      if (newCounter.GetCount() > 1)
+      {
+        t = "times";
+      }
+      else
+      {
+        t = "time";
+      }
+
+
+      Console.WriteLine($"The word '{newCounter.Word}' appears {newCounter.GetCount()} {t} in the sentence '{newCounter.Sentence}' ");
 
 
 
