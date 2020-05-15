@@ -34,9 +34,8 @@ namespace WordCounter
 
         if (RepeatCounter.GetInstances().Count > 0)
         {
-          Console.WriteLine(
-            $@"If you want to try again, press Enter. 
-              If you want to [V]iew your previous entries, press V and enter.");
+          Console.WriteLine("If you want to try again, press Enter.")
+          Console.WriteLine("If you want to [V]iew your previous entries, press V and enter.");
           string resp = Console.ReadLine().ToLower();
           if (resp == "v")
           {
