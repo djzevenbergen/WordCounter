@@ -7,8 +7,12 @@ namespace WordCounter
   {
     public static void Main()
     {
-
       Console.WriteLine("Hey there, I can take a sentence and a word, and I can count how many times that word appears in that sentence");
+      Loop();
+    }
+
+    public static void Loop()
+    {
       bool sentBool = false;
       bool wordBool = false;
       string sentResp = "";
@@ -45,12 +49,7 @@ namespace WordCounter
       {
         t = "time";
       }
-
-
       Console.WriteLine($"The word '{newCounter.Word}' appears {newCounter.GetCount()} {t} in the sentence '{newCounter.Sentence}' ");
-
-
-
 
     }
   }
