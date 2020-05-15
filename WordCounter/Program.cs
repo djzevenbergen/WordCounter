@@ -16,6 +16,8 @@ namespace WordCounter
       while (!view)
       {
         view = RunProgramLoop();
+        Console.WriteLine("");
+
       }
 
       if (view == true)
@@ -29,8 +31,10 @@ namespace WordCounter
 
       foreach (RepeatCounter i in RepeatCounter.GetInstances())
       {
+        Console.WriteLine("");
         Console.WriteLine($"sentence, {i.Sentence}, contained, {i.Word}, count, {i.GetCount()}");
       }
+      Console.WriteLine("");
       Console.WriteLine("Print Summary to .txt file? [Y]/[N]");
       string resp = Console.ReadLine().ToLower();
 
@@ -98,6 +102,7 @@ namespace WordCounter
 
       if (RepeatCounter.GetInstances().Count > 0)
       {
+        Console.WriteLine("");
         Console.WriteLine("If you want to try again, press Enter.");
         Console.WriteLine("If you want to [V]iew your previous entries, press V and enter.");
         string resp = Console.ReadLine().ToLower();
@@ -125,6 +130,7 @@ namespace WordCounter
       {
         Console.WriteLine("Enter a sentence: ");
         sentResp = Console.ReadLine();
+        Console.WriteLine("");
         sentBool = RepeatCounter.CheckIfValid(sentResp);
         if (!sentBool)
         {
@@ -135,6 +141,7 @@ namespace WordCounter
       {
         Console.WriteLine("Enter a word: ");
         wordResp = Console.ReadLine();
+        Console.WriteLine("");
         wordBool = RepeatCounter.CheckIfValid(wordResp);
         if (!wordBool)
         {
