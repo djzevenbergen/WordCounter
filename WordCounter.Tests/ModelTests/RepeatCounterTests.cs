@@ -62,6 +62,16 @@ namespace WordCounter.Tests
       Assert.AreEqual(false, response);
     }
 
+    [TestMethod]
+
+    public void CheckIfValid_ChecksInputIsPopulatedString_True()
+    {
+      string test = "there is a thing";
+      bool response = RepeatCounter.CheckIfValid(test);
+
+      Assert.AreEqual(true, response);
+    }
+
 
 
   }

@@ -1,3 +1,5 @@
+using System;
+
 namespace WordCounter.Models
 {
   public class RepeatCounter
@@ -34,6 +36,30 @@ namespace WordCounter.Models
       }
 
       return count;
+    }
+
+    public static bool CheckIfValid(string input)
+    {
+      bool valid = true;
+      string[] inp = input.Split(" ");
+      if (input.Length == 0)
+      {
+        valid = false;
+      }
+      else
+      {
+        valid = false;
+        foreach (string i in inp)
+        {
+          if (!(i == ""))
+          {
+            valid = true;
+          }
+        }
+      }
+
+
+      return valid;
     }
 
   }
