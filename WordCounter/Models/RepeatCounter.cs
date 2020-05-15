@@ -29,7 +29,7 @@ namespace WordCounter.Models
       int count = 0;
       foreach (string w in stringArray)
       {
-        if (w.Contains(word.ToLower()))
+        if (w.Length == word.Length && w.Contains(word.ToLower()))
         {
           count += 1;
         }
