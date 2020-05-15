@@ -30,6 +30,9 @@ _This C# console application allows a user enters a sentence and a word, and cou
 4. User enters an empty word, and the program responds with a prompt
   * Input: "" or "          "
   * Output: "Please enter a word!"
+5. User enters a sentence and a word, where the sentence contains words that contain the word, and the program doesn't count those partial matches
+  * Input: "Cat catcat cat", "cat"
+  * Output: "The word 'cat' appears 2 times in the sentence "Cat catcat cat"
 
 
 ## Support
