@@ -36,24 +36,17 @@ _This C# console application allows a user enters a sentence and a word, and cou
 
 
 
----
-## Known Bugs
-
 
 ## Support
 
-_Email: nitundatta8@gmail.com_
+_Open an issue_
 
----
+
 ## Built With
-
-## Useful tools
-
-
-
+C#
 
 ### License
 
 This project is licensed under the MIT License
 
-Copyright (c) 2020 **_Nitun Datta & DJ Zevenbergen_**
+Copyright (c) 2020 **_DJ Zevenbergen_**
