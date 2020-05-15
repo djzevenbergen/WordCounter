@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace WordCounter.Models
 {
@@ -10,6 +11,8 @@ namespace WordCounter.Models
 
     private int _count;
 
+    private static List<RepeatCounter> _instances = new List<RepeatCounter> { };
+
     public int GetCount()
     {
       return _count;
@@ -19,8 +22,13 @@ namespace WordCounter.Models
     {
       Sentence = sent;
       Word = word;
-
       _count = CountRepeats(sent, word);
+      _instances.Add(this);
+    }
+
+    public static List<RepeatCounter> GetInstances()
+    {
+      return _instances;
     }
 
     public int CountRepeats(string sent, string word)
