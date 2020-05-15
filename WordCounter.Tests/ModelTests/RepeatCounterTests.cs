@@ -31,6 +31,38 @@ namespace WordCounter.Tests
       Assert.AreEqual(2, testCounter.GetCount());
     }
 
+    [TestMethod]
+
+    public void RepeatCounter_CalculatesZeroWhenNoMatch_Int()
+    {
+      string sent = "There is a rat over there";
+      string word = "than";
+      RepeatCounter testCounter = new RepeatCounter(sent, word);
+
+      Assert.AreEqual(0, testCounter.GetCount());
+    }
+
+    [TestMethod]
+
+    public void CheckIfValid_ChecksInputIsGreaterThanZero_False()
+    {
+      string test = "";
+      bool response = RepeatCounter.CheckIfValid(test);
+
+      Assert.AreEqual(false, response);
+    }
+
+    [TestMethod]
+
+    public void CheckIfValid_ChecksInputIsNotJustSpaces_False()
+    {
+      string test = "         ";
+      bool response = RepeatCounter.CheckIfValid(test);
+
+      Assert.AreEqual(false, response);
+    }
+
+
 
   }
 }
