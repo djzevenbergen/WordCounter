@@ -72,7 +72,15 @@ namespace WordCounter.Tests
       Assert.AreEqual(true, response);
     }
 
+    [TestMethod]
+    public void RepeatCounter_DoesntCountPartialMatches_Int()
+    {
+      string sent = "There is a ratrat rat rat over there";
+      string word = "rat";
+      RepeatCounter testCounter = new RepeatCounter(sent, word);
 
+      Assert.AreEqual(2, testCounter.GetCount());
+    }
 
   }
 }
