@@ -33,6 +33,9 @@ _This C# console application allows a user enters a sentence and a word, and cou
 5. User enters a sentence and a word, where the sentence contains words that contain the word, and the program doesn't count those partial matches
   * Input: "Cat catcat cat", "cat"
   * Output: "The word 'cat' appears 2 times in the sentence "Cat catcat cat"
+6. User can save summary of actions into .txt file
+  * Input: Save? Y
+  * Output: saved file
 
 
 ## Support
