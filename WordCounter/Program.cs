@@ -8,15 +8,30 @@ namespace WordCounter
     public static void Main()
     {
       Console.WriteLine("Hey there, I can take a sentence and a word, and I can count how many times that word appears in that sentence");
-      Loop();
+      string[] inputs = ReturnValidStrings();
+
+      RepeatCounter newCounter = new RepeatCounter(inputs[0], inputs[1]);
+      string t = "";
+
+      if (newCounter.GetCount() > 1)
+      {
+        t = "times";
+      }
+      else
+      {
+        t = "time";
+      }
+      Console.WriteLine($"The word '{newCounter.Word}' appears {newCounter.GetCount()} {t} in the sentence '{newCounter.Sentence}' ");
+
     }
 
-    public static void Loop()
+    public static string[] ReturnValidStrings()
     {
       bool sentBool = false;
       bool wordBool = false;
       string sentResp = "";
       string wordResp = "";
+      string[] validInputs = { "", "" };
       while (sentBool == false)
       {
         Console.WriteLine("Enter a sentence: ");
@@ -37,19 +52,10 @@ namespace WordCounter
           Console.WriteLine("Please enter a valid word!");
         }
       }
+      validInputs[0] = sentResp;
+      validInputs[1] = wordResp;
 
-      RepeatCounter newCounter = new RepeatCounter(sentResp, wordResp);
-      string t = "";
-
-      if (newCounter.GetCount() > 1)
-      {
-        t = "times";
-      }
-      else
-      {
-        t = "time";
-      }
-      Console.WriteLine($"The word '{newCounter.Word}' appears {newCounter.GetCount()} {t} in the sentence '{newCounter.Sentence}' ");
+      return validInputs;
 
     }
   }
